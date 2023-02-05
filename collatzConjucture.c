@@ -1,3 +1,4 @@
+//declaring or importing required libraries.
 #include <sys/types.h>
 #include <stdio.h>
 #include <unistd.h>
