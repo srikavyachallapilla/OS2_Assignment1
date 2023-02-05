@@ -42,7 +42,7 @@ int main(int argc, char* argv[])
             else{
                 sleep(1);
                 wait(0);
-                printf("children completed \n");
+                printf("children complete \n");
             }
         }
     }
