@@ -10,7 +10,6 @@
 void collatzConjucture(int n, int child){
     //declare char type variable to store a string
     char buffer[50];
-    printf("Enter input:");
     //using sprintf to store the string into buffer instead of printing on stdout.
     sprintf(buffer, "From Child %d init n = %d, ", child, n);
     //displaying the buffer using printf
@@ -40,6 +39,7 @@ void collatzConjucture(int n, int child){
 //declaring main function with argc and argv as command line arguments for command line input
 int main(int argc, char* argv[])
 {
+    printf("Enter input:");
     //declaring variables
     int pid, pid1;
     //converting char type variable to int type
