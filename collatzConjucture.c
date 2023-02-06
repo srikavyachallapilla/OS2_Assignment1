@@ -10,6 +10,7 @@
 void collatzConjucture(int n, int child){
     //declare char type variable to store a string
     char buffer[50];
+    printf("Enter input:");
     //using sprintf to store the string into buffer instead of printing on stdout.
     sprintf(buffer, "From Child %d init n = %d, ", child, n);
     //displaying the buffer using printf
