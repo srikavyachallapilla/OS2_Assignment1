@@ -39,6 +39,7 @@ void collatzConjucture(int n, int child){
 //declaring main function with argc and argv as command line arguments for command line input
 int main(int argc, char* argv[])
 {
+    printf("Enter number");
     //declaring variables
     int pid, pid1;
     //converting char type variable to int type
