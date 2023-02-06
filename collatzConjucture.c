@@ -67,7 +67,7 @@ int main(int argc, char* argv[])
                 sleep(1);
                 //using wait() for children to complete its process
                 wait(0);
-                printf("children complete \n");
+                printf("children complete\n");
             }
         }
     }
