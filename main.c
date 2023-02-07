@@ -38,7 +38,7 @@ int main(int argc, char* argv[])
         if(pid == 0){
             //child 1 calling the collatzConjucture function
             //using sprintf to store the string into buffer instead of printing on stdout.
-            sprintf(buffer, "From Child 1 init n = %d, ", child);
+            sprintf(buffer, "From Child 1 init n = %d, ", a);
             //displaying the buffer using printf
             printf("%s", buffer);
             collatzConjucture(a, 1);
@@ -51,7 +51,7 @@ int main(int argc, char* argv[])
             if(pid1 == 0){
                 //child 2 calling the collatzConjucture function
                 //using sprintf to store the string into buffer instead of printing on stdout.
-                sprintf(buffer, "From Child 2 init n = %d, ", child);
+                sprintf(buffer, "From Child 2 init n = %d, ", a);
                 //displaying the buffer using printf
                 printf("%s", buffer);
                 collatzConjucture(a+3, 2);
