@@ -54,6 +54,8 @@ int main(int argc, char* argv[])
             exit(0);
         }
         else{
+            //using wait() for child 1 to complete its process
+            wait(0);
             //calling fork() to create another child process
             pid1 = fork();
             //if fork() returns 0, it means another child process is created
@@ -64,7 +66,6 @@ int main(int argc, char* argv[])
             }
             else{
                 //using wait() for children to complete its process
-                wait(0);
                 wait(0);
                 printf("children complete\n");
             }
