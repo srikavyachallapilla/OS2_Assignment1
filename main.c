@@ -17,7 +17,7 @@ void collatzConjucture(int n, int child){
             //collatz conjucture logic for odd numbers 
             n = (n * 3) + 1;
         }
-        printf("From Child %d n=%d, ",n,child);
+        printf("From Child %d n=%d, ",child, n);
     }
 }
 
