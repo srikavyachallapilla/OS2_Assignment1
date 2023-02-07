@@ -45,28 +45,22 @@ int main(int argc, char* argv[])
     int a = atoi(argv[1]);
     //fork() is called to create new child process
     pid = fork();
-    //calling fork() to create another child process
-    pid1 = fork();
     //checking if the input is in given limit
     if(a > 1 || a < 40){
         //if fork() returns 0, it means child process is created.
         if(pid == 0){
             //child 1 calling the collatzConjucture function
             collatzConjucture(a, 1);
+            exit(0);
         }
         else{
-            collatzConjucture(a+3, 2);
-        }
-    }
-           else if(a > 1 || a < 40){
-        //if fork() returns 0, it means child process is created.
-                if(pid1 == 0){
-            //child 1 calling the collatzConjucture function
-                    collatzConjucture(a, 1);
-                }
-                else{
-                    collatzConjucture(a+3, 2);
-                }
+            //calling fork() to create another child process
+            pid1 = fork();
+            //if fork() returns 0, it means another child process is created
+            if(pid1 == 0){
+                //child 2 calling the collatzConjucture function
+                collatzConjucture(a+3, 2);
+                exit(0);
             }
             else{
                 //using wait() for children to complete its process
@@ -74,5 +68,9 @@ int main(int argc, char* argv[])
                 wait(0);
                 printf("children complete\n");
             }
+        }
+    }
+    
+
     return 0;
 }
