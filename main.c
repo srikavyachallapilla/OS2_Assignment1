@@ -18,10 +18,6 @@ void collatzConjucture(int n, int child){
     while(n > 1){
         if(n % 2 == 0){ //collatz conjucture logic for even numbers 
             n = n / 2;
-            //using sprintf to store the string into buffer instead of printing on stdout.
-            sprintf(buffer, "From child %d n = %d, ", child, n);
-            //displaying the buffer using printf
-            printf("%s", buffer);
         }
         else{
             //collatz conjucture logic for odd numbers 
@@ -51,27 +47,29 @@ int main(int argc, char* argv[])
         if(pid == 0){
             //child 1 calling the collatzConjucture function
             collatzConjucture(a, 1);
+            //using sprintf to store the string into buffer instead of printing on stdout.
+            sprintf(buffer, "From child %d n = %d, ", child, n);
+            //displaying the buffer using printf
+            printf("%s", buffer);
             exit(0);
         }
-        else{
-            //using wait() for child 1 to complete its process
-            wait(0);
             //calling fork() to create another child process
             pid1 = fork();
             //if fork() returns 0, it means another child process is created
             if(pid1 == 0){
                 //child 2 calling the collatzConjucture function
-                collatzConjucture(a+3, 2);
+                collatzConjucture(a+3, 2);//using sprintf to store the string into buffer instead of printing on stdout.
+                sprintf(buffer, "From child %d n = %d, ", child, n);
+                //displaying the buffer using printf
+                printf("%s", buffer);
                 exit(0);
             }
             else{
                 //using wait() for children to complete its process
                 wait(0);
+                wait(0);
                 printf("children complete\n");
             }
         }
-    }
-    
-
     return 0;
 }
