@@ -51,6 +51,7 @@ int main(int argc, char* argv[])
         if(pid == 0){
             //child 1 calling the collatzConjucture function
             collatzConjucture(a, 1);
+            exit(0);
         }
         else{
             //using wait() for child 1 to complete its process
@@ -61,10 +62,9 @@ int main(int argc, char* argv[])
             if(pid1 == 0){
                 //child 2 calling the collatzConjucture function
                 collatzConjucture(a+3, 2);
+                exit(0);
             }
             else{
-                //parent using sleep for delay
-                sleep(1);
                 //using wait() for children to complete its process
                 wait(0);
                 printf("children complete\n");
